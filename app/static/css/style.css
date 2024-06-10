@@ -1,0 +1,528 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: auto
+}
+
+
+.diagonal-line-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-190deg, lightblue 50%, white 50%);
+    pointer-events: none; /* Allows interaction with elements below */
+    z-index: -1; /* Ensures it's behind other content */
+}
+
+.profile-image {
+    position: absolute;
+    width: 350px; /* Size of the image */
+    height: 350px; /* Size of the image */
+    top: 46.5%; /* Center vertically within .main-container */
+    left: 50%; /* Center horizontally within .main-container */
+    transform: translate(-50%, -50%); /* Centering trick */
+    box-sizing: border-box;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    border-radius: 50%;
+    border: 3.5px solid #333;
+    object-fit: cover;
+    object-position: 50% 40%; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.circle-menu {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transform: translate(-15%, 0%);
+    left: 50%;
+    top: 44.4%;
+}
+
+.circle-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.circle-menu ul li {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    background: #333;
+    text-align: center;
+    line-height: 40px;
+    transform-origin: 150px 150px;
+    transition: transform 0.5s, background 0.5s;
+    border-radius: 30px;
+}
+
+.circle-menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/* Positions for the menu items */
+.circle-menu ul li:nth-child(1) { transform: rotate(0deg) translate(260px) rotate(-0deg); }
+.circle-menu ul li:nth-child(2) { transform: rotate(35deg) translate(250px) rotate(-35deg); }
+.circle-menu ul li:nth-child(3) { transform: rotate(90deg) translate(220px) rotate(-90deg); }
+.circle-menu ul li:nth-child(4) { transform: rotate(145deg) translate(250px) rotate(-145deg); }
+.circle-menu ul li:nth-child(5) { transform: rotate(180deg) translate(260px) rotate(-180deg); }
+.circle-menu ul li:nth-child(6) { transform: rotate(215deg) translate(250px) rotate(-215deg); }
+.circle-menu ul li:nth-child(7) { transform: rotate(270deg) translate(220px) rotate(-270deg); }
+.circle-menu ul li:nth-child(8) { transform: rotate(325deg) translate(250px) rotate(-325deg); }
+
+/* Hover effects */
+.circle-menu ul li:hover {
+    background: #555;
+}
+
+.circle-menu ul li a:hover {
+    color: #ddd;
+}
+
+
+
+
+
+
+.top-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between items */
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.top-bar .name a {
+    color: inherit; /* This makes the link use the same color as the surrounding text */
+    text-decoration: none; /* This removes the underline */
+}
+
+/* Optional: Add a hover effect */
+.top-bar .name a:hover {
+    text-decoration: underline; /* Adds underline on hover for visual feedback */
+    color: #5489c2; /* Change to desired hover color */
+}
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+.intro-text {
+    text-align: center;
+    margin-top: 430px; /* Adjust spacing as needed */
+}
+
+.intro-text p {
+    font-size: 18px; /* Adjust font size as needed */
+    margin: 0; /* Remove default margin */
+}
+
+.intro-text h1 {
+    font-size: 36px; /* Adjust font size as needed */
+    margin: 10px 0 0; /* Adjust spacing as needed */
+}
+
+.bottom-locked-sentence {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    left: 0;
+    right: 0;
+    bottom: 20px; /* Locked to the bottom */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    background-color: rgba(255, 255, 255, 0.9); /* Optional background */
+}
+
+
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 80px;
+    right: 100px;
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    cursor: pointer;
+    animation: wobble 2s infinite;
+}
+
+@keyframes wobble {
+    0%, 100% { transform: scale(0.5); }
+    50% { transform: scale(0.6); }
+}
+
+.chatbox {
+    position: fixed;
+    bottom: 90px; /* Position it above the chatbot icon */
+    right: 20px;
+    width: 300px; /* Adjust size as needed */
+    height: 400px; /* Adjust size as needed */
+    border: 1px solid #333;
+    background-color: white;
+    display: none; /* Hidden by default */
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Optional: Adds a shadow for depth */
+    z-index: 100; /* Ensures it's above other content */
+}
+
+#chatbox-content {
+    height: 340px; /* Adjust based on total chatbox height */
+    overflow-y: auto; /* Adds scrolling for overflow */
+    margin-bottom: 10px;
+}
+
+
+#message-input {
+    width: calc(100% - 60px); /* Adjust width considering button width */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Rounded corners */
+}
+
+#send-button {
+    width: 50px; /* Adjust as needed */
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+
+    .top-bar {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .name {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    .links {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Spacing between items */
+    }
+    
+    .links a {
+        text-decoration: none;
+        color: black;
+        font-size: 12px;
+    }
+
+    .dropbtn {
+        background-color: white;
+        color: black;
+        padding: 10px;
+        font-size: 12px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .profile-image {
+        position: absolute;
+        width: 200px; /* Size of the image */
+        height: 200px; /* Size of the image */
+        top: 40%; /* Center vertically within .main-container */
+        left: 50%; /* Center horizontally within .main-container */
+        transform: translate(-52%, -52%); /* Centering trick */
+    }
+
+    .profile-image img {
+        transform: scale(1.0);
+    }
+
+    .circle-menu {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 40%;
+    }
+
+    .circle-menu ul li {
+        position: absolute;
+        width: 90px;
+        height: 20px;
+        background: #333;
+        text-align: center;
+        line-height: 20px;
+        transform-origin: 80px 80px;
+        transition: transform 0.5s, background 0.5s;
+        border-radius: 30px;
+    }
+
+    .circle-menu ul li a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        transition: color 0.5s;
+        font-size: 10px;
+    }
+
+    .circle-menu ul li:nth-child(1) { transform: translate(55px) translateY(-20px); }
+    .circle-menu ul li:nth-child(2) { transform: translate(150px) translateY(35px); }
+    .circle-menu ul li:nth-child(3) { transform: translate(165px) translateY(90px); }
+    .circle-menu ul li:nth-child(4) { transform: translate(150px) translateY(145px); }
+    .circle-menu ul li:nth-child(5) { transform: translate(55px) translateY(200px); }
+    .circle-menu ul li:nth-child(6) { transform: translate(-50px) translateY(145px); }
+    .circle-menu ul li:nth-child(7) { transform: translate(-60px) translateY(90px); }
+    .circle-menu ul li:nth-child(8) { transform: translate(-40px) translateY(35px); }
+
+
+    .intro-text {
+        text-align: center;
+        margin-top: 50%; /* Adjust spacing as needed */
+    }
+    
+    .intro-text p {
+        font-size: 18px; /* Adjust font size as needed */
+        margin: 0; /* Remove default margin */
+    }
+    
+    .intro-text h1 {
+        font-size: 36px; /* Adjust font size as needed */
+        margin: 10px 0 0; /* Adjust spacing as needed */
+    }
+
+    .bottom-locked-sentence {
+        position: fixed; /* Fixed positioning relative to the viewport */
+        left: 0;
+        right: 0;
+        bottom: 20%; /* Locked to the bottom */
+        text-align: center; /* Center the text */
+        padding: 5px; /* Add some padding */
+        word-wrap: break-word;
+        font-size: 10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.9); /* Optional background */
+    }
+
+    .chatbot-icon {
+        position: fixed;
+        width: 30px; /* Adjust size as needed */
+        height: 30px;
+        transform: translate(-40%, -40%);
+        bottom: 15%;
+        right: 60%;
+        transform: scale(0.5)
+        /* Adjust the position of the chatbot icon as needed for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* This is for testemonials*/
+
+#testimonial-container {
+    position: absolute;
+    top: 30%;
+    width: 80%;
+    left: 10%; /* Centering the container */
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.testimonial {
+    display: none;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.testimonial-text {
+    font-size: 14px;
+}
+
+
+@media (max-width: 1000px) {
+    #testimonial-container {
+        position: relative; /* Adjust position for smaller screens */
+        top: 20%; /* Position it slightly higher */
+        left: 0;
+        right: 0; /* Ensuring the container is stretched to the full width */
+        width: auto; /* Auto width to fit the container to the viewport */
+        margin: 0 10px; /* Add margin to maintain padding on the sides */
+        padding: 10px; /* Adjust padding for a tighter layout */
+        box-sizing: border-box; /* Include padding and border in the width calculation */
+    }
+
+    .testimonial-name {
+        font-size: 14px; /* Adjust font size if necessary */
+    }
+
+    .testimonial-text {
+        font-size: 12px; /* Adjust font size if necessary */
+    }
+}
+
+
+
+
+/* Contact Page*/
+.contact-container {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.contact-container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-container p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        width: 90%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    .contact-container h2 {
+        font-size: 20px;
+    }
+
+    .contact-container p {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+/* Under Contruciton */
+.construction-content {
+    text-align: center; /* Centering the content */
+    margin-top: 50px; /* Spacing from top */
+}
+
+.construction-content h1 {
+    font-size: 3em; /* Large, bold text */
+    color: #333; /* Text color */
+    margin-bottom: 20px; /* Spacing between text and image */
+}
+
+.construction-content img {
+    width: 100%; /* Increased width of the image */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensures the image is block-level for center alignment */
+    margin-left: auto; /* Centers the image horizontally */
+    margin-right: auto;
+    margin-bottom: 20px; /* Adds space between the image and the text */
+}
+

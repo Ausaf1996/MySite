@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="name">
+            <!-- Clickable name that redirects to the home page -->
+            <a href="{{ url_for('main.home') }}">Ausaf Qureshi Syed</a>
+        </div>
+        <div class="links">
+            <div class="dropdown">
+                <button class="dropbtn">Friends</button>
+                <div class="dropdown-content">
+                    <a href="http://www.jibransrobotics.com/">Jibran (Robotics)</a>
+                    <a href="http://www.jibransrobotics.com/">Muqeet (Mech Eng)</a>
+                    <!-- Add more friends as needed -->
+                </div>
+            </div>
+            <a href="{{ url_for('main.testimonial') }}">Testimonials</a>
+            <a href="https://www.linkedin.com/in/syed-ausaf-qureshi/" target="_blank">LinkedIn Profile</a>
+            <a href="{{ url_for('main.contact') }}">Contact</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="diagonal-line-overlay"></div> <!-- Diagonal line overlay -->
+        <div class="container">
+
+            <!-- Contact Information Container -->
+            <div class="contact-container">
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> ausaf1996@gmail.com</p>
+                <p><strong>Phone:</strong> 0403138910</p>
+                <p><strong>Address:</strong> Macquarie Park 2113, NSW, Australia</p>
+            </div>
+
+            <!-- Other page elements -->
+        </div>
+    </div>
+        <!-- Remaining content -->
+
+    <!-- Chatbot Icon and Chatbox -->
+    <!-- ... -->
+
+    <!-- Link to External JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+</html>

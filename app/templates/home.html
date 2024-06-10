@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.79">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="name">Ausaf Qureshi Syed</div>
+        <div class="links">
+            <div class="dropdown">
+                <button class="dropbtn">Friends</button>
+                <div class="dropdown-content">
+                    <a href="http://www.jibransrobotics.com/">Jibran (Robotics)</a>
+                    <a href="http://www.jibransrobotics.com/">Muqeet (Mech Eng)</a>
+                    <!-- Add more friends as needed -->
+                </div>
+            </div>
+            <a href="{{ url_for('main.testimonial') }}">Testimonials</a>
+            <a href="https://www.linkedin.com/in/syed-ausaf-qureshi/" target="_blank">LinkedIn Profile</a>
+            <a href="{{ url_for('main.contact') }}">Contact</a>
+        </div>
+    </div>
+    
+
+    <div class="main-container">
+        <div class="diagonal-line-overlay"></div>
+        <div class="container">
+            <div class="profile-image">
+                <img src="{{ url_for('static', filename='images/Ausaf.jpg') }}" alt="Profile Image">
+            </div>
+
+            <div class="intro-text">
+                <p>Hi there, I am Ausaf</p>
+                <h1>A Data Geek</h1>
+            </div>
+            
+            <!-- New container for the locked sentence -->
+            <div class="bottom-locked-sentence">
+                <p>I will say no more, who wants to go through 1000s of lines of information, just talk to the AI version of me   ----> </p>
+            </div>  
+            
+            <nav class="circle-menu">
+                <ul>
+                    <li><a href="{{ url_for('main.about') }}">About Me</a></li>
+                    <li><a href="{{ url_for('main.university_projects') }}">University Projects</a></li>
+                    <li><a href="{{ url_for('main.work_experience') }}">Work Experience</a></li>
+                    <li><a href="{{ url_for('main.own_projects') }}">Own Projects</a></li>
+                    <li><a href="{{ url_for('main.community_contribution') }}">Social Contribution</a></li>
+                    <li><a href="{{ url_for('main.education') }}">Education</a></li>
+                    <li><a href="{{ url_for('main.certifications') }}">Certifications</a></li>
+                    <li><a href="{{ url_for('main.interest') }}">Interests</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+     <!-- Chatbot Icon -->
+     <div class="chatbot-icon" onclick="toggleChatbox()">
+        <img src="{{ url_for('static', filename='images/chat-icon.png') }}" alt="Chat Icon">
+    </div>
+
+    <!-- Chatbox -->
+    <div class="chatbox" id="chatbox">
+        <div id="chatbox-content">
+            <!-- Messages will appear here -->
+        </div>
+        <input type="text" id="message-input" placeholder="Hi There, I am an AI version of Ausaf">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Link to External JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+
+</body>
+</html>

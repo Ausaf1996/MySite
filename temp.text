@@ -1,0 +1,254 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.diagonal-line-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-190deg, lightblue 50%, white 50%);
+    pointer-events: none; /* Allows interaction with elements below */
+    z-index: -1; /* Ensures it's behind other content */
+}
+
+.profile-image {
+    width: 150%; /* or any other percentage to control size */
+    padding-top: 150%; /* same as width to maintain square aspect ratio */
+    border-radius: 50%; /* make it circular */
+    overflow: hidden; /* hide overflow */
+    position: relative; /* for absolute positioning of child img */
+    margin: 150% -25%; /* optional, for centering if needed */
+}
+
+.profile-image img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #333;
+    object-fit: cover;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+}
+
+
+.circle-menu {
+    position: absolute;
+    width: 50%; /* Adjusted from 500px */
+    height: auto; /* Maintain aspect ratio */
+    top: 42.5%;
+    left: 69.8%;
+    transform: translate(-50%, -50%);
+}
+
+
+.circle-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.circle-menu ul li {
+    position: absolute;
+    width: 150px;
+    height: 40px;
+    background: #333;
+    text-align: center;
+    line-height: 40px;
+    transform-origin: 150px 150px;
+    transition: transform 0.5s, background 0.5s;
+    border-radius: 30px;
+}
+
+.circle-menu ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+/* Positions for the menu items */
+.circle-menu ul li:nth-child(1) { transform: rotate(0deg) translate(260px) rotate(-0deg); }
+.circle-menu ul li:nth-child(2) { transform: rotate(35deg) translate(250px) rotate(-35deg); }
+.circle-menu ul li:nth-child(3) { transform: rotate(90deg) translate(220px) rotate(-90deg); }
+.circle-menu ul li:nth-child(4) { transform: rotate(145deg) translate(250px) rotate(-145deg); }
+.circle-menu ul li:nth-child(5) { transform: rotate(180deg) translate(260px) rotate(-180deg); }
+.circle-menu ul li:nth-child(6) { transform: rotate(215deg) translate(250px) rotate(-215deg); }
+.circle-menu ul li:nth-child(7) { transform: rotate(270deg) translate(220px) rotate(-270deg); }
+.circle-menu ul li:nth-child(8) { transform: rotate(325deg) translate(250px) rotate(-325deg); }
+
+/* Hover effects */
+.circle-menu ul li:hover {
+    background: #555;
+}
+
+.circle-menu ul li a:hover {
+    color: #ddd;
+}
+
+
+
+
+
+
+.top-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between items */
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+.intro-text {
+    text-align: center;
+    margin-top: 60vh; /* Use vh for a viewport-relative margin */
+}
+
+.intro-text p, .intro-text h1 {
+    font-size: 2vw; /* Responsive font size */
+    margin: 0.5em 0; /* Use em for margin */
+}
+
+.bottom-locked-sentence {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 5vh; /* Use vh for viewport-relative positioning */
+    text-align: center;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+@keyframes wobble {
+    0%, 100% { transform: scale(0.5); }
+    50% { transform: scale(0.6); }
+}
+
+
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 8vh; /* Use vh for viewport-relative positioning */
+    right: 5vw; /* Use vw for viewport-relative positioning */
+    width: 8vw; /* Make icon size responsive */
+    height: auto; /* Maintain aspect ratio */
+    cursor: pointer;
+    animation: wobble 2s infinite;
+}
+
+.chatbox {
+    position: fixed;
+    bottom: 10vh;
+    right: 5vw;
+    width: 80vw; /* Responsive width */
+    height: 50vh; /* Responsive height */
+    border: 1px solid #333;
+    background-color: white;
+    display: none;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+#chatbox-content {
+    height: 80%; /* Relative height */
+    overflow-y: auto;
+}
+
+#message-input, #send-button {
+    width: auto; /* Adjust width */
+    padding: 0.5em;
+    font-size: 1em; /* Responsive font size */
+}
+
+
+#send-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+
+.circle-menu ul li:nth-child(1) { transform: rotate(-29.74deg) translate(40.31px) rotate(29.74deg); }
+    .circle-menu ul li:nth-child(2) { transform: rotate(11.81deg) translate(122.49px) rotate(-11.81deg); }
+    .circle-menu ul li:nth-child(3) { transform: rotate(25.24deg) translate(176.78px) rotate(-25.24deg) translateY(-20px); }
+    .circle-menu ul li:nth-child(4) { transform: rotate(46.36deg) translate(173.21px) rotate(-46.36deg); }
+    .circle-menu ul li:nth-child(5) { transform: rotate(77.64deg) translate(163.08px) rotate(-77.64deg); }
+    .circle-menu ul li:nth-child(6) { transform: rotate(111.8deg) translate(134.16px) rotate(-111.8deg); }
+    .circle-menu ul li:nth-child(7) { transform: rotate(139.8deg) translate(117.8px) rotate(-139.8deg) translate(20px); }
+    .circle-menu ul li:nth-child(8) { transform: rotate(153.43deg) translate(55.9px) rotate(-153.43deg); }

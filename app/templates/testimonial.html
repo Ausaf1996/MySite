@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+
+    <div class="top-bar">
+        <div class="name">
+            <a href="{{ url_for('main.home') }}">Ausaf Qureshi Syed</a>
+        </div>
+        <div class="links">
+            <div class="dropdown">
+                <button class="dropbtn">Friends</button>
+                <div class="dropdown-content">
+                    <a href="http://www.jibransrobotics.com/">Jibran (Robotics)</a>
+                    <a href="http://www.jibransrobotics.com/">Muqeet (Mech Eng)</a>
+                    <!-- Add more friends as needed -->
+                </div>
+            </div>
+            <a href="{{ url_for('main.testimonial') }}">Testimonials</a>
+            <a href="https://www.linkedin.com/in/syed-ausaf-qureshi/" target="_blank">LinkedIn Profile</a>
+            <a href="{{ url_for('main.contact') }}">Contact</a>
+        </div>
+    </div>
+
+
+    <div class="main-container">
+        <div class="diagonal-line-overlay"></div> <!-- Diagonal line overlay -->
+        <div class="container">
+
+            <!-- Testimonials Container -->
+            <div id="testimonial-container">
+                <div class="testimonial" style="display: block;">
+                    <p class="testimonial-name"><strong>Pradyumna Doddala: VP of Engineering</strong></p>
+                    <p class="testimonial-text">"I am glad to mentor and work with Ausaf in the early career. He is an absolute data nut and never hesitates to learn new things to get what he/business needs. He has designed a matching algorithm which is being used on the Workers app and worked on several reports that are being used by business in a regular manner. 
+                        If you get a chance to work with him, don't pass go. I wish him all the best and would love to work with him in the future."</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Max Huang: AI-Enhanced Human Capability</strong></p>
+                    <p class="testimonial-text">"I highly recommend him to anyone in search of a talented data scientist with exceptional writing and research skills.I highly recommend connecting with Ausaf on LinkedIn. I had the pleasure of working with him in the past and can confidently say that he is a skilled data scientist with a strong foundation in natural language processing (NLP). He consistently displayed exceptional initiative, meeting all deadlines and producing data science reports of an outstanding quality that exceeded expectations. Furthermore, his writing abilities are exceptional, with the capacity to communicate complex technical concepts in a clear and concise manner, making him a valuable asset to any team. Ausaf's ability to turn data into compelling narratives that can be easily comprehended by a diverse audience is also noteworthy."</p>
+                </div>
+                <!-- More testimonials follow in similar format -->
+                <!-- Testimonial 3 -->
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Mohammed Faisal: Graduate Research and Teaching Assistant</strong></p>
+                    <p class="testimonial-text">"Motivated and Knowledgable person, knows his stuff pretty well."</p>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Fareed Syed: Systems Engineer - ADAS at Valeo</strong></p>
+                    <p class="testimonial-text">"Ausaf is a very talented and creative individual. He always delivers beyond expectations. I would highly recommend him to any team."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Sunil Gudivada: Software Engineer at Microsoft</strong></p>
+                    <p class="testimonial-text">"Happy Man, never said no to any kind of work, no to any kind of reports. A person with a good attitude towards the work and Kills the people with his amazing work in data science and machine learning."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Venkata Siva Prasad K: Senior AI-Data Engineer</strong></p>
+                    <p class="testimonial-text">"Ausaf is an excellent resource, and a master at Data science has been a real gem to Machine learning, Python, Visualization and Data analysis. He makes sure all the deadlines meet and that also with the highest standards. He is a hardworking and dedicated person who will complete your project in a given time frame. I would recommend and endorse Ausaf. One of the best passionate Data scientist I worked so far."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Fei Gao: Advanced Technology & Analytics Manager - Global People Analytics</strong></p>
+                    <p class="testimonial-text">"Syed is an awesome young talent, we really enjoyed the time working with him. He is a good team player partnering with multiple stakeholders in projects and could network and communicate effectively. He has very strong domain knowledge in data science and machine learning, along with good skills in coding and developing machine learning backed applications. Based on his work, we actually automate a business process which saves a lot of human effort and cost. I would recommend Syed to any data science related positions based on my experience working with him."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Fazeeluddin Syed: Product Development Engineer at Ford Motor Company</strong></p>
+                    <p class="testimonial-text">"Ausaf is a very talented engineer. Highly skilled and with amazing problem solving abilities. I have worked with Ausaf in Team Robocon MJCET for ABU Robocon 2016 where task oriented Robots are designed and developed to perform the given tasks. Ausaf was the Mechanical Design Engineer of the team where he worked on the Design of robots. I can vouch Ausaf for good team work, his technical expertise and he is always ready for new challenges."</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-name"><strong>Mohammed Shahbaz: People Analytics Advisor</strong></p>
+                    <p class="testimonial-text">"Ausaf has a strong technical understanding in most of the data science concepts. He demonstrated good capabilities of evaluating and solving the business problems. Ausaf behaved very professional during the internship.Ausaf has a strong technical understanding in most of the data science concepts. He demonstrated good capabilities of evaluating and solving the business problems. Ausaf behaved very professional during the internship."</p>
+                </div>
+            </div>
+
+            <!-- Other page elements -->
+        </div>
+    </div>
+
+    <!-- Chatbot Icon and Chatbox -->
+    <!-- ... -->
+
+    <!-- Link to External JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+</html>

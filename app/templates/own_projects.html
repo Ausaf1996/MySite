@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Under Construction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="name">
+            <!-- Clickable name that redirects to the home page -->
+            <a href="{{ url_for('main.home') }}">Ausaf Qureshi Syed</a>
+        </div>
+        <div class="links">
+            <div class="dropdown">
+                <button class="dropbtn">Friends</button>
+                <div class="dropdown-content">
+                    <a href="http://www.jibransrobotics.com/">Jibran (Robotics)</a>
+                    <a href="http://www.jibransrobotics.com/">Muqeet (Mech Eng)</a>
+                    <!-- Add more friends as needed -->
+                </div>
+            </div>
+            <a href="{{ url_for('main.testimonial') }}">Testimonials</a>
+            <a href="https://www.linkedin.com/in/syed-ausaf-qureshi/" target="_blank">LinkedIn Profile</a>
+            <a href="{{ url_for('main.contact') }}">Contact</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="diagonal-line-overlay"></div>
+        <!-- Main content with 'Under Construction' message and image -->
+        <div class="construction-content">
+            <img src="{{ url_for('static', filename='images/con6.jpeg') }}" alt="Under Construction">
+            <h1>Under Construction</h1>
+        </div>
+    </div>
+
+    <!-- Link to External JavaScript -->
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+</body>
+</html>
